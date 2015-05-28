@@ -1,6 +1,7 @@
 package controller;
 
 import model.Game;
+import model.UserException;
 import view.GameView;
 import view.console.ConsoleView;
 import view.swing.SwingView;
@@ -9,10 +10,15 @@ import view.swing.SwingView;
  * Контроллер
  */
 public class Main {
-    Game game = new Game();
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws UserException {
+        Game game = new Game();
         GameView gameView = new ConsoleView();
-        GameView gui = new SwingView();
+        //GameView gui = new SwingView();
+        while (true){
+            gameView.render(game);
+            gameView.getMove(game);
+        }
     }
 }

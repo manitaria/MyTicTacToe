@@ -20,4 +20,9 @@ public class SwingView implements GameView {
     public void render(Game game) {
 
     }
+
+    @Override
+    public void getMove(Game game) {
+
+    }
 }

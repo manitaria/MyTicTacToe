@@ -39,6 +39,10 @@ public class Game {
         return size;
     }
 
+    public Cell[][] getField() {
+        return field;
+    }
+
     /**
      * Ход
      *
@@ -56,9 +60,11 @@ public class Game {
         switch (state) {
             case X_MOVE:
                 field[x][y] = Cell.X;
+                state = State.O_MOVE;
                 break;
             case O_MOVE:
                 field[x][y] = Cell.O;
+                state = State.X_MOVE;
                 break;
             default:
                 throw new UserException("Ход невозможен!");
